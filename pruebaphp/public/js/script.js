@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Cargar select de bodegas
+
 function cargarBodegas() {
     fetch('api/index.php?action=getBodegas')
         .then(res => res.json())
@@ -29,7 +29,7 @@ function cargarBodegas() {
         .catch(console.error);
 }
 
-// Cargar select de sucursales
+
 function cargarSucursales(bodegaId) {
     const select = document.getElementById('sucursal');
     select.innerHTML = '<option value=""></option>';
@@ -51,7 +51,7 @@ function cargarSucursales(bodegaId) {
         .catch(console.error);
 }
 
-// Cargar select de monedas
+
 function cargarMonedas() {
     fetch('api/index.php?action=getMonedas')
         .then(res => res.json())
@@ -68,9 +68,9 @@ function cargarMonedas() {
         .catch(console.error);
 }
 
-// Validar y enviar formulario
+
 function validarYEnviarFormulario() {
-    // Obtener valores
+    
     const codigo = document.getElementById('codigo').value.trim();
     const nombre = document.getElementById('nombre').value.trim();
     const precio = document.getElementById('precio').value.trim();
@@ -92,34 +92,34 @@ function validarYEnviarFormulario() {
     if (codigo.length < 5 || codigo.length > 15) {
         return alert("El código del producto debe tener entre 5 y 15 caracteres.");
     }
-    // 2️⃣ Nombre Producto
+    
     if (!nombre) return alert("El nombre del producto no puede estar en blanco.");
     if (nombre.length < 2 || nombre.length > 50)
         return alert("El nombre del producto debe tener entre 2 y 50 caracteres.");
 
-    // 3️⃣ Precio
+    
     if (!precio) return alert("El precio del producto no puede estar en blanco.");
     if (!/^\d+(\.\d{1,2})?$/.test(precio) || parseFloat(precio) <= 0)
         return alert("El precio del producto debe ser un número positivo con hasta dos decimales.");
 
-    // 4️⃣ Materiales
+    
     if (materiales.length < 2) return alert("Debe seleccionar al menos dos materiales para el producto.");
 
-    // 5️⃣ Bodega
+    
     if (!bodega) return alert("Debe seleccionar una bodega.");
 
-    // 6️⃣ Sucursal
+    
     if (!sucursal) return alert("Debe seleccionar una sucursal para la bodega seleccionada.");
 
-    // 7️⃣ Moneda
+    
     if (!moneda) return alert("Debe seleccionar una moneda para el producto.");
 
-    // 8️⃣ Descripción
+    
     if (!descripcion) return alert("La descripción del producto no puede estar en blanco.");
     if (descripcion.length < 10 || descripcion.length > 1000)
         return alert("La descripción del producto debe tener entre 10 y 1000 caracteres.");
 
-    // Enviar datos
+    
     const formData = new FormData();
     formData.append('codigo', codigo);
     formData.append('nombre', nombre);
@@ -130,7 +130,7 @@ function validarYEnviarFormulario() {
     formData.append('descripcion', descripcion);
     materiales.forEach(id => formData.append('materiales[]', id));
 
-    // 🔹 Mostrar los datos en consola
+    
     for (let pair of formData.entries()) {
         console.log(pair[0] + ': ' + pair[1]);
     }
@@ -155,3 +155,4 @@ function validarYEnviarFormulario() {
             alert('Ocurrió un error al guardar el producto.');
         });
 }
+
