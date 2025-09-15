@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Formulario de Producto</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Formulario de Producto</h1>
+    <form id="productForm" novalidate>
+
+      <!-- Código -->
+      <label for="codigo">
+        Código
+        <input type="text" id="codigo" name="codigo" placeholder="">
+      </label>
+
+      <!-- Nombre -->
+      <label for="nombre">
+        Nombre
+        <input type="text" id="nombre" name="nombre" placeholder="">
+      </label>
+
+      <!-- Bodega -->
+      <label for="bodega">
+        Bodega
+        <select id="bodega" name="bodega">
+          <option value=""></option>
+        </select>
+      </label>
+
+      <!-- Sucursal -->
+      <label for="sucursal">
+        Sucursal
+        <select id="sucursal" name="sucursal" disabled>
+          <option value=""></option>
+        </select>
+      </label>
+
+      <!-- Moneda -->
+      <label for="moneda">
+        Moneda
+        <select id="moneda" name="moneda">
+          <option value=""></option>
+        </select>
+      </label>
+
+      <!-- Precio -->
+      <label for="precio">
+        Precio
+        <input type="text" id="precio" name="precio" placeholder="">
+      </label>
+
+      <!-- Materiales -->
+      <fieldset class="full-width">
+        <legend>Material del Producto</legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="materiales[]" value="1"> Plástico</label>
+          <label><input type="checkbox" name="materiales[]" value="2"> Metal</label>
+          <label><input type="checkbox" name="materiales[]" value="3"> Madera</label>
+          <label><input type="checkbox" name="materiales[]" value="4"> Vidrio</label>
+          <label><input type="checkbox" name="materiales[]" value="5"> Textil</label>
+        </div>
+      </fieldset>
+
+      <!-- Descripción -->
+      <label for="descripcion" class="full-width">
+        Descripción
+        <textarea id="descripcion" name="descripcion" class="descripcion" placeholder="></textarea>
+      </label>
+
+      <!-- Botón -->
+      <div class="full-width">
+        <button type="submit">Guardar Producto</button>
+      </div>
+
+    </form>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+Versiones:
+
+PHP 8.0
+PostgreSQL 14
+
+
+Instalacion y configuracion
+
+1- Usar git clone
+
+git clone https://github.com/JorgeParraR97/Prueba-PHP.git
+
+2- Abrir carpeta del proyecto mediante VisualStudio
+
+3- Iniciar sesion en PostgreSQL
+
+psql -U postgres
+
+4- Crear la base de datos a utilizar y conectarse a la nueva base de datos
+
+CREATE DATABASE sistema_registro_producto;
+
+\c sistema_registro_producto;
+
+5- Ejecutar el script de schema.sql y seed.sql
+
+psql -U postgres -d sistema_registro_producto -f "ruta donde esta ubicado"\pruebaphp\bd\schema.sql
+
+psql -U postgres -d sistema_registro_producto -f "ruta donde esta ubicado"\pruebaphp\bd\seed.sql
+
+6- Realizar configuracion de la conexion con la base de datos mediante el archivo "database.php"
+
+Modificar con los datos correspondientes
+
+    private $port = ''; #Puerto utilizado por PostgreSQL 
+    private $username = 'postgres'; #Usuario de PostgreSQL
+    private $password = '1234'; #Contraseña del usuario de PostgreSQL
+
+7- Iniciar el servidor PHP
+
+En la consola ejecutar el siguiente comando
+
+php -S localhost:"puerto de preferencia"
+
+
+8- Ingresar a la ruta "http://localhost:(puerto ingresado)"
+
+9- Listo para la utilizacion del sistema 
+
