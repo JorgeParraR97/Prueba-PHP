@@ -18,15 +18,15 @@ psql -U postgres
 
 4- Crear la base de datos a utilizar y conectarse a la nueva base de datos
 
-CREATE DATABASE sistema_registro_producto;
+CREATE DATABASE sistema_registro_productos;
 
-\c sistema_registro_producto;
+\c sistema_registro_productos;
 
 5- Ejecutar el script de schema.sql y seed.sql
 
-psql -U postgres -d sistema_registro_producto -f "ruta donde esta ubicado"\pruebaphp\bd\schema.sql
+psql -U postgres -d sistema_registro_productos -f "ruta donde esta ubicado"\pruebaphp\bd\schema.sql
 
-psql -U postgres -d sistema_registro_producto -f "ruta donde esta ubicado"\pruebaphp\bd\seed.sql
+psql -U postgres -d sistema_registro_productos -f "ruta donde esta ubicado"\pruebaphp\bd\seed.sql
 
 6- Realizar configuracion de la conexion con la base de datos mediante el archivo "database.php"
 
@@ -38,12 +38,13 @@ Modificar con los datos correspondientes
 
 7- Iniciar el servidor PHP
 
-En la consola ejecutar el siguiente comando
+En la consola ejecutar el siguiente comando, estando en la carpeta principal del proyecto
 
-php -S localhost:"puerto de preferencia"
+php -S localhost:"puerto de preferencia" router.php
 
 
 8- Ingresar a la ruta "http://localhost:(puerto ingresado)"
 
 9- Listo para la utilizacion del sistema 
+
 
